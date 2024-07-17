@@ -8,14 +8,10 @@ const port = 3000;
 
 const logger = (req, res, next) => {
   console.log("Req type", req.method);
-  console.log("Req url", req.url);
+  console.log("Req ", req.url);
   next();
 };
-const nameGenerator = (req, res, next) => {
-  if (req.method == "POST") {
-    next();
-  }
-};
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(logger);
 
